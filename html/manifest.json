@@ -1,0 +1,19 @@
+{
+  "background_color": "rgb(249, 229, 71);",
+  "name": "Museum in a Box",
+  "short_name": "M in a B",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "logo-in-box-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+  "thanks": [
+  	{
+  		"src": "https://github.com/dhg/Skeleton/",
+  		"msg": "Skeleton rocks!",
+  	}
+  ]
+}
