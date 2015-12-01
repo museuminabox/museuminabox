@@ -1,1 +1,66 @@
-<h1>Museum in a Box</h1>
+    <div class="row">
+    	<div class="twelve columns">
+    		<p><img src="assets/images/seated.jpg" alt="3D print of a seated Aztec figure. He's seated on an RFID reader too." width="100%"></p>
+    	</div>
+    </div>
+	
+	<h1>Museum in a Box. Huh?</h1>
+	<p>What if you could make your own collection from any of the museums in the world? Imagine if that collection could be delivered to your house or class or office or kindy. What happens when the box knows what objects are in it? What if it could look on the web for new info about them? <br><br>That's a museum in a box. I know this is too long.</p>
+
+    <a name="boxes"></a>
+	<h2>Boxes</h2>
+	<p>We're on the second round of prototyping. V2 means at least three different boxes, made from a pool of <a href="#">about 30 objects</a>.</p>
+	
+<% @boxes.each do |box| %>
+  <%= link_to box.museum.name, box %>
+<% end %>	
+	
+	<div class="row center">
+		<div class="four columns">
+    		<img src="images/seated.jpg" width="100%">
+			<h4><a href="">Statues of Women in London</a></h4>
+		</div>
+		<div class="four columns">
+    		<img src="images/seated.jpg" width="100%">
+			<h4><a href="">Animals from The British Museum</a></h4>
+		</div>
+		<div class="four columns">
+    		<img src="images/seated.jpg" width="100%">
+			<h4><a href="">Stuff made of stone that's a bit random</a></h4>
+		</div>
+	</div>
+	
+	<a name="museums"></a>
+	<h2>Museums</h2>
+	<p>
+		<a href="">Horniman Museum and Gardens</a>, 
+		<a href="">The British Museum</a>
+	</p>
+	<h6>Hi. Are you from a museum? <a href="">Find out more</a>.</h6>
+
+    <a name="sowhat"></a>
+	<h2>So what?</h2>
+	<p>So <em>what</em>? Philistine!</p>
+
+	<blockquote>
+		<p>The Imperial War Museum has six million photographs and 120 million feet of film. The British Museum has four million prints and drawings. The V&A has one million prints and drawings and 80,000 textiles. Collections like these cannot be displayed in their entirety: they are too numerous and too light sensitive. Placing them all on display would be absurdly expensive and utterly indigestible. It would make them not more but less accessible to the thousands of interested people who currently study them each year and would bring about their gradual but irreversible destruction by exposure to light.</p>
+		<p><a href="http://www.nationalmuseums.org.uk/media/documents/publications/too_much_stuff.pdf">Too much stuff? Disposal from museums, Page 5</a> (PDF, 2003)</p>
+	</blockquote>
+	<p>Most museums have less than 10% of their collections on display. We're on a mission to help provide a new kind of access to the other 90%. There's potential value in all of it. Imagine if Amazon only showed 10% of its products?</p>
+	
+	<h5>It all comes back to digitisation</h5>
+	<p>Making a 3D model of an object is straightforward. We can help you learn how to do it.</p>
+
+	<h5>Objects and data combined</h5>
+	<p>What can happen when you're holding a copy of the Rosetta Stone in your hand? What could it tell you? What has it witnessed? Objects can be receptacles and prompts and in a Museum in a Box, the objects unlock information. The object and all the data that surrounds it is <em>transportable</em>.</p>
+	
+	<h5>Access is preservation</h5>
+	<p>sdf</p>	
+		
+	<h5>More than one point of view</h5>
+	<p>There's a huge gap between the data about objects in museum collection management systems and what's produced about them by the people who study them. We want to close that gap by facilitating ways for people to contribute their knowledge (or links or other useful things) back into each object's infosystem.</p>
+			
+    <a name="help"></a>
+	<h2>Help</h2>
+	<p>Oh! You'd like to help? That's brilliant.</p>      
+	
