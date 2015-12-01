@@ -47,7 +47,7 @@ p, li {
 	float:left;
 	margin:0;
 }
-ul.nav li a {
+.nav ul li a {
 	display: block;
 	padding: 14px 16px;
 	text-decoration: none;
