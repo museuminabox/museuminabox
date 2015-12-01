@@ -9,14 +9,14 @@ body {
 a {
   color: #000000; 
   border-bottom: 3px solid darkkhaki;
-  padding-bottom: 3px;
+  padding-bottom: 2px;
   text-decoration: none;
 }
   
 a:hover {
   color: #000000; 
   border-bottom: 3px solid yellow;
-  padding-bottom: 3px;
+  padding-bottom: 2px;
   text-decoration: none;
 }
   
