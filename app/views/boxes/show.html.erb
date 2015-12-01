@@ -1,0 +1,9 @@
+<h1>Box <%= @box.id %></h1>
+
+<p>A version of <%= @box.museum.name %></p>
+
+<h2>In the box</h2>
+
+<% @prints.each do |print| %>
+  <%= link_to print.thing.name, print_path(print) %>
+<% end %>
