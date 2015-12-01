@@ -1,0 +1,20 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: museum_in_a_box
+
+test:
+  <<: *default
+  database: museuminabox_test
+
+
+production:
+  <<: *default
+  database: museuminabox_production
+  username: museuminabox
+  password: <%= ENV['DATABASE_URL'] %>
