@@ -1,3 +1,8 @@
 <h1><%= @institution.name %></h1>
 
-<%= @institution.inspect %>
+
+<h2>Objects</h2>
+
+<% @things.each do |thing| %>
+  <%= link_to thing.name, object_path(thing) %>
+<% end %>
