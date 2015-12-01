@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'home#show'
   
-match '/home' => 'pages#home'
-match '/about' => 'pages#about'
+  get '/home' => 'pages#home'
+  get '/about' => 'pages#about'
   
 end
