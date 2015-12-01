@@ -79,7 +79,13 @@ p, li {
 .bio div {
 	padding: 20px;
 }
-
+.idea {
+	
+}
+.idea h6 {
+	background-color:yellow;
+	padding:1px;
+}
 .partners {
 	text-align:center;
 	font-size: 1em;

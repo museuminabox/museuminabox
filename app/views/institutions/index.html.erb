@@ -1,5 +1,23 @@
-<h1>Museums and Other Organisations</h1>
-<p>Each group listed here has at least one <a href="/objects">object</a> available to be added to a box.</p>
-<% @institutions.each do |institution| %>
-  <%= link_to institution.name, institution %>
-<% end %>
+<h1>Museums</h1>
+
+<div class="row">
+	<div class="three columns idea">
+		<h6>The Idea</h6>
+		<p>One of our favourite elements of Museum in a Box is that you can make a new collection all your own from museums across the world.</p>
+		<p>It was often the case, particularly in the late 19th century, that a haul from the New World would be split and shared amongst the grand museums of the UK and Europe. What if you could join them back together?</p>
+	</div>
+	<div class="nine columns">
+		<p>Each group listed here has at least one <a href="/objects">object</a> available to be added to a box.</p>
+
+		<ul>
+		<% @institutions.each do |institution| %>
+		  <li><%= link_to institution.name, institution %>
+		<% end %>
+		</ul>
+		
+		<h5>Building Partnerships</h5>
+		<p>It's important to note that this list of organisations is derived from the list of objects we've gathered for version 2. We're working directly with a handful of these good folk, but are very interested to talk with you if you're thinking about 3D digitisation, and interesting projects that share your collection with a broader public than those lucky people who can cross your threshold.</p>
+		<p><a href="/contact">We want to hear from you</a> if you're curious about putting some of your collection into the mix here.</p>
+		
+	</div>
+</div>
