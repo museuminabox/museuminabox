@@ -1,27 +1,45 @@
 <p><a href="/objects">Objects</a></p>
 <h1><%= @thing.name %></h1>
 
-<% if @thing.institution %>
-  <p>From <%= link_to @thing.institution.name, @thing.institution %></p>
-<% else %>
-  <p>Not part of an institution.</p>
-<% end %>
+<p>Huge picture of (original) thing</p>
 
-<p><%= @thing.description %></p>
-<p><%= @thing.description_attribution_url %></p>
+<div class="row">
+	<div class="three columns">
 
-<p>
-  <% @thing.creators.each do |creator| %>
-    <span><%= creator %></span>
-  <% end %>
-</p>
+	<h6>Made by</h6>
+	<p>
+	  <% @thing.creators.each do |creator| %>
+		<span><%= creator %></span>
+	  <% end %>
+	</p>
+	
+	<% if @thing.institution %>
+	  <p>From <%= link_to @thing.institution.name, @thing.institution %></p>
+	<% else %>
+	  <p>Not part of an institution.</p>
+	<% end %>
+		
+	<h6>Tags</h6>	
+	<p>
+	  <% @thing.tags.each do |tag| %>
+		<span><%= tag %></span>
+	  <% end %>
+	</p>	
+	
+	</div>
+	<div class="six columns">
+		<p><%= @thing.description %></p>
+		<p><%= @thing.description_attribution_url %></p>
 
-<p><%= @thing.wikipedia_url %></p>
+		<p><%= @thing.wikipedia_url %></p>
 
-<p>
-  <% @thing.tags.each do |tag| %>
-    <span><%= tag %></span>
-  <% end %>
-</p>
-
-<p><%= @thing.three_dimensions ? '3D' : '2D' %></p>
+		<p><%= @thing.three_dimensions ? '3D' : '2D' %></p>
+	</div>
+	<div class="three columns">
+		<h6>Found in...</h6>
+		<p>
+			<a href="">Box 1</a>
+			<a href="">Box 2</a>
+		</p>	
+	</div>
+</div>
