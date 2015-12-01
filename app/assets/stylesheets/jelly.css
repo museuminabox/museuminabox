@@ -69,7 +69,10 @@ p, li {
 .lead {
 	font-size: 2em;
 }
-.tag span { background-color: white; }
+.tag span { 
+	padding: 0 2px;
+	background-color: white; 
+}
 
 .bio {
 	text-align:center;
