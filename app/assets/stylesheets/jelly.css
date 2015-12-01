@@ -35,7 +35,9 @@ p, li {
 .nav {
 	margin-bottom: 20px; 
 }
-
+.logo a {
+	border:0;
+}
 .nav ul {
 	list-style-type: none;
 	float:right;
