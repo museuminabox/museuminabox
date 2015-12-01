@@ -76,6 +76,9 @@ p, li {
 .bio h5 {
 	margin-bottom:0;
 }
+.bio div {
+	padding: 20px;
+}
 
 .partners {
 	text-align:center;
