@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :boxes, only: [:index, :show]
 
   root 'home#show'
+  
+match '/home' => 'pages#home'
+match '/about' => 'pages#about'
+  
 end
