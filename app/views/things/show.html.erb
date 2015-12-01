@@ -28,11 +28,11 @@
 	
 	</div>
 	<div class="six columns">
-		<p><%= @thing.description %></p>
-		<p><%= @thing.description_attribution_url %></p>
-
-		<p><%= @thing.wikipedia_url %></p>
-
+		<p>
+			<%= @thing.description %><br />
+			<%= link_to @thing.description_attribution_url, Source %>
+		</p>
+		<p><%= link_to @thing.wikipedia_url, Wikipedia %></p>
 		<p><%= @thing.three_dimensions ? '3D' : '2D' %></p>
 	</div>
 	<div class="three columns">
