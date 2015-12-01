@@ -6,20 +6,20 @@
 <div class="row">
 	<div class="three columns">
 
-	<h6>Made by</h6>
-	<p>
-	  <% @thing.creators.each do |creator| %>
-		<span><%= creator %></span>
-	  <% end %>
-	</p>
-	
 	<% if @thing.institution %>
 	  <p>From <%= link_to @thing.institution.name, @thing.institution %></p>
 	<% else %>
 	  <p>Not part of an institution.</p>
 	<% end %>
+	
+	<h5>Made by</h5>
+	<p>
+	  <% @thing.creators.each do |creator| %>
+		<span><%= creator %></span>
+	  <% end %>
+	</p>
 		
-	<h6>Tags</h6>	
+	<h5>Tags</h5>	
 	<p>
 	  <% @thing.tags.each do |tag| %>
 		<span><%= tag %></span>
@@ -36,7 +36,7 @@
 		<p><%= @thing.three_dimensions ? '3D' : '2D' %></p>
 	</div>
 	<div class="three columns">
-		<h6>Found in...</h6>
+		<h5>Found in...</h5>
 		<p>
 			<a href="">Box 1</a>
 			<a href="">Box 2</a>
