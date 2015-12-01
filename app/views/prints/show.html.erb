@@ -2,7 +2,7 @@
 
 <p>Part of <%= link_to "Box #{@print.box.id}", @print.box %>.</p>
 
-<p>A print of <%= link_to @print.thing.name, object_path(@print.thing) %> from the <%= link_to @print.institution.name, @print.institution %>.</p>
+<p>A print of <%= link_to @print.thing.name, object_path(@print.thing) %> from <%= link_to @print.institution.name, @print.institution %>.</p>
 
 <p>Dimensions: <%= @print.width_in_m %> x <%= @print.height_in_m %> x <%= @print.depth_in_m %> in a scale of <%= @print.print_scale %></p>
 
