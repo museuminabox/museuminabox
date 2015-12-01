@@ -69,6 +69,7 @@ p, li {
 .lead {
 	font-size: 2em;
 }
+.tag span { background-color: green; }
 
 .bio {
 	text-align:center;

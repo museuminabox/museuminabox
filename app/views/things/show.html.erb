@@ -20,7 +20,7 @@
 	</p>
 		
 	<h5>Tags</h5>	
-	<p>
+	<p class="tag">
 	  <% @thing.tags.each do |tag| %>
 		<span><%= tag %></span>
 	  <% end %>
@@ -44,8 +44,8 @@
 	</div>
 </div>
 
-<h3><%= @thing.name %> prints</h3>
-<table>
+<h3>Prints</h3>
+<table width="100%">
 	<tr>
 		<th>Print ID</th>
 		<th>Box</th>
