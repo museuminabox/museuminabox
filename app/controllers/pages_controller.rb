@@ -6,4 +6,10 @@ class PagesController < ApplicationController
   def about
   end
 
+  def sowhat
+  end
+
+  def help
+  end
+  
 end

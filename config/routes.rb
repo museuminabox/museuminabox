@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   
   get '/about' => 'pages#about'
+  get '/sowhat' => 'pages#sowhat'
+  get '/help' => 'pages#help'
   
 end
