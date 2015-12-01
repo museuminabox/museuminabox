@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-@import url("/assets/stylesheets/skeleton.css");
-@import url("/assets/stylesheets/normalize.css");
-@import url("/assets/stylesheets/jelly.css");
