@@ -29,6 +29,9 @@ p, li {
 	background-color: #e5e5e5;
 	text-align:center;
 }
+.center {
+	margin: 30px 0;
+}
 .nav {
 	margin-bottom: 20px; 
 }
