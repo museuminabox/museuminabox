@@ -2,7 +2,7 @@ body {
 	padding:40px;
 	background-color: lightgrey;
 	color: #333;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Futura', 'Raleway', sans-serif;
 }
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -21,7 +21,7 @@ a:hover {
 }
   
 p, li {   
-	font-family: "Verdana", sans-serif;
+	font-family: 'Futura', 'Verdana', sans-serif;
 }
 
 .hi {
@@ -66,4 +66,19 @@ p, li {
 
 .lead {
 	font-size: 2em;
+}
+
+.bio {
+	text-align:center;
+}
+.bio h5 {
+	margin-bottom:0;
+}
+
+.partners {
+	text-align:center;
+	font-size: 1em;
+}
+.partners li {
+	list-style-type: none;
 }
