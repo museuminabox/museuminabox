@@ -14,6 +14,6 @@
  *= require_self
  */
 
-@import url("skeleton.css");
-@import url("normalize.css");
-@import url("jelly.css");
+@import url("/assets/stylesheets/skeleton.css");
+@import url("/assets/stylesheets/normalize.css");
+@import url("/assets/stylesheets/jelly.css");
