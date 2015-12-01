@@ -1,6 +1,10 @@
 <h1><%= @thing.name %></h1>
 
-<p>From <%= link_to @thing.institution.name, @thing.institution %></p>
+<% if @thing.institution %>
+  <p>From <%= link_to @thing.institution.name, @thing.institution %></p>
+<% else %>
+  <p>Not part of an institution.</p>
+<% end %>
 
 <p><%= @thing.description %></p>
 <p><%= @thing.description_attribution_url %></p>
