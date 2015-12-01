@@ -1,0 +1,5 @@
+<h1>Objects</h1>
+
+<% @things.each do |thing| %>
+  <%= link_to thing.name, object_path(thing) %>
+<% end %>
