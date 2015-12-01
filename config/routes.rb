@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   resources :prints, only: [:index, :show]
   resources :boxes, only: [:index, :show]
 
-  root 'home#show'
+  root 'pages#home'
   
-  get '/' => 'pages#home'
   get '/about' => 'pages#about'
   
 end
