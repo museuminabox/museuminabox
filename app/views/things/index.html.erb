@@ -1,7 +1,7 @@
 <h1>Objects</h1>
 
-<div class="row objects">
+<ol>
 <% @things.each do |thing| %>
-  <div class="six columns"><%= link_to thing.name, object_path(thing) %></div>
+  <li><%= link_to thing.name, object_path(thing) %></li>
 <% end %>
-</div>
+</ol>
