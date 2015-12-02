@@ -8,13 +8,13 @@
 </div>
 
 <div class="row">
-	<div class="six columns">
+	<div class="seven columns">
 		<p class="lead">
 			<%= @thing.description %>
 		</p>
 		<p><a href="<%= @thing.description_attribution_url %>">Source of description</a>
 		<% if @thing.wikipedia_url %>
-		 + <%= @thing.wikipedia_url %>
+		 + <a href="<%= @thing.wikipedia_url %>">Wikipedia</a>
 		 <% end %>
 		 </p>
  		<p>The original is a <%= @thing.three_dimensions ? '3D' : '2D' %> object.</p>
@@ -43,8 +43,8 @@
 		</p>	
 	
 	</div>	
-	<div class="three columns">
-		<h5>Found in...</h5>
+	<div class="two columns">
+		<h5>Boxes</h5>
 		<p>
 			<a href="">Box 1</a>
 			<a href="">Box 2</a>
