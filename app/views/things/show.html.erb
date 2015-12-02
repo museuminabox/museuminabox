@@ -15,13 +15,6 @@
  		<p>The original is a <%= @thing.three_dimensions ? '3D' : '2D' %> object.</p>
 	</div>
 	<div class="three columns">
-		<h5>Found in...</h5>
-		<p>
-			<a href="">Box 1</a>
-			<a href="">Box 2</a>
-		</p>	
-	</div>
-	<div class="three columns">
 
 	<% if @thing.institution %>
 	  <p>From <%= link_to @thing.institution.name, @thing.institution %></p>
@@ -29,20 +22,28 @@
 	  <p>This object didn't come from an institution.</p>
 	<% end %>
 	
-	<h5>Made by</h5>
-	<p>
-	  <% @thing.creators.each do |creator| %>
-		<span><%= creator %></span>
-	  <% end %>
-	</p>
+		<h5>Made by</h5>
+		<p>
+		  <% @thing.creators.each do |creator| %>
+			<span><%= creator %></span>
+		  <% end %>
+		</p>
 		
-	<h5>Tags</h5>	
-	<p class="tag">
-	  <% @thing.tags.each do |tag| %>
-		<span><%= tag %></span>
-	  <% end %>
-	</p>	
+		<h5>Tags</h5>	
+		<p class="tag">
+		  <% @thing.tags.each do |tag| %>
+			<span><%= tag %></span>
+		  <% end %>
+		</p>	
 	
+	</div>	
+	<div class="three columns">
+		<h5>Found in...</h5>
+		<p>
+			<% @boxes.each do |box| %>
+			  <%= link_to box.museum.name, box %>
+			<% end %>
+		</p>	
 	</div>
 	
 </div>
