@@ -29,11 +29,11 @@
 	</div>
 	<div class="six columns">
 		<p>
-			<%= @thing.description %><br />
+			<%= @thing.description %> &bull;
 			<a href="<%= @thing.description_attribution_url %>">Source</a>
 		</p>
-		<p><%= @thing.wikipedia_url %></p>
-		<p><%= @thing.three_dimensions ? '3D' : '2D' %></p>
+		<p><a href="<%= @thing.wikipedia_url %>">More on Wikipedia</a></p>
+		<p>The original is a <%= @thing.three_dimensions ? '3D' : '2D' %> object.</p>
 	</div>
 	<div class="three columns">
 		<h5>Found in...</h5>
