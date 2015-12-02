@@ -1,6 +1,8 @@
 <h1><%= @print.thing.name %></h1>
 
-<p>Part of <%= link_to "Box #{@print.box.id}", @print.box %>.</p>
+<p><img src="<%= @print.media.image %>"></p>
+
+<p>Part of <%= link_to "Box #{@print.box.name}", @print.box %>.</p>
 
 <p>A print of <%= link_to @print.thing.name, object_path(@print.thing) %> from <%= link_to @print.institution.name, @print.institution %>.</p>
 
