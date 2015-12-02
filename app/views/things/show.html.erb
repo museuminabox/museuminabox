@@ -1,16 +1,16 @@
 <p><a href="/objects">Objects</a></p>
 <h1><%= @thing.name %></h1>
 
-<p>Huge picture of (original) thing</p>
+<p><a href="lakshmi.jpg"><img src="lakshmi.jpg" alt="placeholder - should show large image of original object"></a></p>
 
 <div class="row">
 	<div class="six columns">
 		<p class="lead">
 			<%= @thing.description %>
 		</p>
-		<p><a href="<%= @thing.description_attribution_url %>">Description from</a>
+		<p><a href="<%= @thing.description_attribution_url %>">Source of description</a>
 		<% if @thing.wikipedia_url %>
-		 / <%= @thing.wikipedia_url %>
+		 + <%= @thing.wikipedia_url %>
 		 <% end %>
 		 </p>
  		<p>The original is a <%= @thing.three_dimensions ? '3D' : '2D' %> object.</p>
