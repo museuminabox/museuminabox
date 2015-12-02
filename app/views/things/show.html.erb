@@ -4,12 +4,29 @@
 <p>Huge picture of (original) thing</p>
 
 <div class="row">
+	<div class="six columns">
+		<p class="lead">
+			<%= @thing.description %> &bull;
+			<a href="<%= @thing.description_attribution_url %>">Source</a>
+		</p>
+	<% if @thing.wikipedia_url %>
+		<p><%= @thing.wikipedia_url %></p>
+	<% end %>
+ 		<p>The original is a <%= @thing.three_dimensions ? '3D' : '2D' %> object.</p>
+	</div>
+	<div class="three columns">
+		<h5>Found in...</h5>
+		<p>
+			<a href="">Box 1</a>
+			<a href="">Box 2</a>
+		</p>	
+	</div>
 	<div class="three columns">
 
 	<% if @thing.institution %>
 	  <p>From <%= link_to @thing.institution.name, @thing.institution %></p>
 	<% else %>
-	  <p>Not part of an institution.</p>
+	  <p>This object didn't come from an institution.</p>
 	<% end %>
 	
 	<h5>Made by</h5>
@@ -27,21 +44,7 @@
 	</p>	
 	
 	</div>
-	<div class="six columns">
-		<p>
-			<%= @thing.description %> &bull;
-			<a href="<%= @thing.description_attribution_url %>">Source</a>
-		</p>
-+		<p><%= @thing.wikipedia_url %></p>
- 		<p>The original is a <%= @thing.three_dimensions ? '3D' : '2D' %> object.</p>
-	</div>
-	<div class="three columns">
-		<h5>Found in...</h5>
-		<p>
-			<a href="">Box 1</a>
-			<a href="">Box 2</a>
-		</p>	
-	</div>
+	
 </div>
 
 <h3>Prints</h3>
