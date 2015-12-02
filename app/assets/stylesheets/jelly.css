@@ -74,6 +74,10 @@ p, li {
 	background-color: white; 
 }
 
+.objects div {
+	padding:30px;
+	text-align: center;
+}
 .bio {
 	text-align:center;
 }
