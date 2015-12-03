@@ -18,6 +18,14 @@
 		 <% end %>
 		 </p>
  		<p>The original is a <%= @thing.three_dimensions ? '3D' : '2D' %> object.</p>
+                <% unless @thing.links.empty? %>
+                <h5>Links</h5>
+                <ul>
+                  <% @thing.links.each do |link| %>
+                  <li><a href="<%= link.url %>"><%= link.description %></a></li>
+                  <% end %>
+                </ul>
+                <% end %>
 	</div>
 	<div class="three columns">
 
