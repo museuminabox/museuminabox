@@ -4,7 +4,7 @@
 <h2>In the box</h2>
 
 <% @prints.each do |print| %>
-  <%= link_to print.thing.name, print_path(print) %>
+  <%= link_to print.thing.name, print_path(thing) %>
 <% end %>
 
 <p>This box ID is <%= @box.id %>.</p>
