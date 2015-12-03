@@ -20,18 +20,17 @@
 	<p>We're on the second round of prototyping. V2 means at least three different boxes, made from a pool of <a href="/objects">about 30 objects</a>.</p>
 	
 	<div class="row center">
+        <% @boxes.each do |box| %>
 		<div class="four columns">
-    		<img src="/seated.jpg" width="100%">
-			<h4><a href="">Statues of Women in London</a></h4>
+                        <% featured = box.random_print %>
+                        <% unless featured.nil? %>
+    			<img src="<%= featured.thing.image %>" alt="<%= featured.thing.image_alt_text %>" width="100%">
+                        <% else %>
+    			<img src="/seated.jpg" width="100%">
+                        <% end %>
+			<h4><%= link_to box.museum.name, url_for(box) %></h4>
 		</div>
-		<div class="four columns">
-    		<img src="/seated.jpg" width="100%">
-			<h4><a href="">Animals from The British Museum</a></h4>
-		</div>
-		<div class="four columns">
-    		<img src="/seated.jpg" width="100%">
-			<h4><a href="">Stuff made of stone that's a bit random</a></h4>
-		</div>
+        <% end %>
 	</div>
 	
 	<a name="museums"></a>

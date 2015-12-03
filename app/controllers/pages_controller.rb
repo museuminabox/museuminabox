@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   def home
+    @boxes = Box.all
   end
 
   def about
