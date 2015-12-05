@@ -18,6 +18,20 @@
 		 <% end %>
 		 </p>
  		<p>The original is a <%= @thing.three_dimensions ? '3D' : '2D' %> object.</p>
+                <% unless @thing.media.empty? %>
+                  <% @thing.media.each do |medium| %>
+                  <div>
+                    <% if medium.media_type == 1 %>
+                      <img src="<%= medium.link_or_embed %>">
+                      <% if medium.attribution %>
+                      <p><%= medium.attribution %></p>
+                      <% end %>
+                    <% else %>
+                      <%= raw(medium.link_or_embed) %>
+                    <% end %>
+                  </div>
+                  <% end %>
+                <% end %>
                 <% unless @thing.links.empty? %>
                 <h5>Links</h5>
                 <ul>

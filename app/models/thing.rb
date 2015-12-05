@@ -5,4 +5,6 @@ class Thing < ActiveRecord::Base
   has_many :links
 
   has_many :prints
+
+  has_many :media
 end

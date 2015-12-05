@@ -1,6 +1,8 @@
 <h1><%= @print.thing.name %></h1>
 
-<p>big image of the print</p>
+<% unless @print.image.nil? -%>
+<p><a href="<%= @print.image %>" style="text-decoration:none;"><img src="<%= @print.image %>" alt="<%= @print.image_alt_text %>" style="width:100%;"></a></p>
+<% end -%>
 
 <p>Part of <%= link_to "Box #{@print.box_id}", @print.box %>.</p>
 
