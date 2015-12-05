@@ -68,8 +68,9 @@
 	<div class="two columns">
 		<h5>Boxes</h5>
 		<p>
-			<a href="">Box 1</a>
-			<a href="">Box 2</a>
+		<% @prints.each do |print| %>
+			<%= link_to "Box #{print.box.id}", box_path(print.box) %>
+		<% end %>
 		</p>	
 	</div>
 	
@@ -84,18 +85,13 @@
 		<th>Sent To</th>
 		<th>Last Boop</th>
 	</tr>
-	<tr>
-		<td>3</td>
-		<td><a href="/boxes/2">Animals</a></td>
-		<td>3 weeks ago</td>
-		<td>United Kingdom</td>
-		<td>2 minutes ago</td>
-	</tr>
-	<tr>
-		<td>4</td>
-		<td><a href="">Big Cats</a></td>
-		<td>9 days ago</td>
-		<td>New Zealand</td>
-		<td>2 days ago</td>
-	</tr>
+	<% @prints.each do |print| %>
+		<tr>
+			<td><%= print.id %></td>
+			<td><%= link_to "Box #{print.box.id}", box_path(print.box) %></td>
+			<td><%= time_ago_in_words(print.created_at) %> ago</td>
+			<td></td>
+			<td></td>
+		</tr>
+	<% end %>
 </table>

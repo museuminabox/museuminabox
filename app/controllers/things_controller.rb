@@ -2,6 +2,7 @@ class ThingsController < ApplicationController
 
   def show
     @thing = Thing.find(params[:id])
+    @prints = @thing.prints.includes(:box)
   end
 
   def index
