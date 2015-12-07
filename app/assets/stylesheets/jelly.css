@@ -23,6 +23,9 @@ a:hover {
 p, li {   
 	font-family: 'Futura', 'Verdana', sans-serif;
 }
+.center {
+	text-align: center;
+}
 
 .hi {
 	padding: 10px;
