@@ -21,7 +21,7 @@
 	
 	<div class="row center">
         <% @boxes.each do |box| %>
-		<div class="four columns">
+		<div class="three columns">
                         <% featured = box.random_print %>
                         <% unless featured.nil? %>
     			<img src="<%= featured.thing.image %>" alt="<%= featured.thing.image_alt_text %>" width="100%">
