@@ -92,7 +92,7 @@
 	</tr>
 	<% @prints.each do |print| %>
 		<tr>
-			<td><%= print.id %></td>
+			<td><%= link_to print.id, print_path(print) %></td>
 			<td><%= link_to "Box #{print.box.id}", box_path(print.box) %></td>
 			<td><%= time_ago_in_words(print.created_at) %> ago</td>
 			<td></td>
