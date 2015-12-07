@@ -13,7 +13,7 @@
 			<%= @thing.description %>
 		</p>
 		<p><a href="<%= @thing.description_attribution_url %>">Source of description</a>
-		<% if @thing.wikipedia_url %>
+		<% if @thing.wikipedia_url.present? %>
 		 + <a href="<%= @thing.wikipedia_url %>">Wikipedia</a>
 		 <% end %>
 		 </p>
