@@ -10,8 +10,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'rails_12factor'
 
 
-
 group :development do
   gem 'spring'
+	gem 'byebug'
 end
 

@@ -6,57 +6,55 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div class="container">
-
-<!-- start nav -->
-    <div class="row nav">
-      <div class="one column logo" title="Museum in a Box!">
-		<a href="/"><img src="/museuminabox-logo-black.svg" width="60" /></a>
+	<div class="container">
+		<!-- start nav -->
+		<div class="row nav">
+	  	<div class="one column logo" title="Museum in a Box!">
+				<a href="/"><img src="/museuminabox-logo-black.svg" width="60" /></a>
+		  </div>
+	    <div class="eleven columns">
+				<ul>
+				  <li><%= current_link_to "Home", "/" %></li>
+				  <li><%= current_link_to "Museums", institutions_path, "institutions" %></li>
+				  <li><%= current_link_to "Objects", objects_path, "things" %></li>
+				  <li><%= current_link_to "Boxes", boxes_path, "boxes" %></li>
+		     	<li><%= current_link_to "So What?", "/sowhat" %></li>
+				  <li><%= current_link_to "Help", "/help" %></li>
+				</ul>
+	    </div>      
 	  </div>
-      <div class="eleven columns">
-		<ul>
-		  <li><a href="/">Home</a></li>
-		  <li><a href="/institutions">Museums</a></li>
-		  <li><a href="/objects">Objects</a></li>
-		  <li><a href="/boxes">Boxes</a></li>
-     	  <li><a href="/sowhat">So What?</a></li>
-		  <li><a href="/help">Help</a></li>
-		</ul>
-      </div>      
-    </div>
-<!-- end nav -->    
-    
-<%= yield %>
+		<!-- end nav -->    
+	    
+		<%= yield %>
 
-<!-- start foot -->
-	<hr />
-	<div class="row foot">
-		<div class="two columns"><a href="#top">&uarr; Top</a></div>
-		<div class="three columns offset-by-one">		
-			<ul>
-				<li><a href="/institutions">Museums</a></li>
-				<li><a href="/objects">Objects</a></li>
-				<li>
-					<a href="/boxes">Boxes</a> 
-					&
-					<a href="/thebrain">The Brain</a>
-				</li>
-				<li><a href="/boops">Boops</a></li>
-			</ul>
+		<!-- start foot -->
+		<hr />
+		<div class="row foot">
+			<div class="two columns"><a href="#top">&uarr; Top</a></div>
+			<div class="three columns offset-by-one">		
+				<ul>
+					<li><a href="/institutions">Museums</a></li>
+					<li><a href="/objects">Objects</a></li>
+					<li>
+						<a href="/boxes">Boxes</a> 
+						&
+						<a href="/thebrain">The Brain</a>
+					</li>
+					<li><a href="/boops">Boops</a></li>
+				</ul>
+			</div>
+			<div class="three columns">		
+				<ul>
+					<li><a href="/about">About Us</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/discussion">Discussion</a></li>
+				</ul>
+			</div>
+			<div class="three columns">		
+				<p><small>Museum in a Box Ltd. is registered in England. Company Number: 09849074.</small></p>
+			</div>
 		</div>
-		<div class="three columns">		
-			<ul>
-				<li><a href="/about">About Us</a></li>
-				<li><a href="/contact">Contact</a></li>
-				<li><a href="/discussion">Discussion</a></li>
-			</ul>
-		</div>
-		<div class="three columns">		
-			<p><small>Museum in a Box Ltd. is registered in England. Company Number: 09849074.</small></p>
-		</div>
+	<!-- end foot -->
 	</div>
-<!-- end foot -->
-</div>
 </body>
 </html>
