@@ -21,5 +21,5 @@ class PagesController < ApplicationController
      
   def thebrain
   end
-        
+
 end
