@@ -18,5 +18,8 @@ class PagesController < ApplicationController
 
   def discussion
   end
-      
+     
+  def thebrain
+  end
+        
 end
