@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :objects, only: [:show, :index], controller: 'things'
   resources :prints, only: [:index, :show]
   resources :boxes, only: [:index, :show]
+  resources :boops, only: [:index, :create]
 
   root 'pages#home'
   
