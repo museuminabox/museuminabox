@@ -4,24 +4,33 @@
     	</div>
     </div>
 	
-	<h1>Museum in a Box?</h1>
-	<p>It's just what it says on the tin: A museum. In a box.</p>
+	<h1 class="center">Museum in a Box?</h1>
+	<p class="center">It's just what it says on the tin: A museum. In a box.</p>
 	
-	<h5>Choose your own museum</h5>
-	<p>What if you could make your own collection from any of the museums in the world? Get your new collection delivered to your home, classroom or office. </p>
-	<h5>Connected museum objects</h5>
-	<p>The fun starts when you realise that the box knows what objects are in it, thanks to a "brain" inside it. As well as showing you great content about each object and the collection, what if the brain could look on the web for new info and updates too?</p> 
-	<h5>Same objects, different places</h5>
-	<p>What if a class in Perth is studying the buildings of ancient Palmyra through the Mosul in a Box box, and there's a class in Singapore using it too? How could the students interact with each other around the objects and their stories?</p>
-	
+	<div class="row">
+		<div class="four columns">
+			<h5>Choose your own museum</h5>
+			<p>What if you could make your own collection from any of the museums in the world? Get your new collection delivered to your home, classroom or office. </p>
+			<p>We want to crack open museum collections around the world, and deliver them to you!</p>
+		</div>
+		<div class="four columns">
+			<h5>Connected museum objects</h5>
+			<p>The fun starts when you realise that the box knows what objects are in it, thanks to a "brain" inside it. As well as showing you great content about each object and the collection, what if the brain could look on the web for new info and updates too?</p> 
+		</div>
+		<div class="four columns">
+			<h5>Same objects, different places</h5>
+			<p>What if a class in Perth is studying the buildings of ancient Palmyra through the Mosul in a Box box, and there's a class in Singapore using it too? How could the students interact with each other around the objects and their stories?</p>
+		</div>
+	</div>
+		
     <a name="boxes"></a>
 	<h2>Boxes</h2>
 	
-	<p>We're on the second round of prototyping. V2 means at least three different boxes, made from a pool of <a href="/objects">about 30 objects</a>.</p>
+	<p>We're on the second round of prototyping and have prepared a few boxes to demonstrate the idea. The hope is that people can either make boxes themselves, or choose from one created by an institution about a theme. We have three boxes, and a pool of <a href="/objects">about 30 objects</a>. (There's also a fourth demonstration of Rembrandt self-portraits that doesn't have prints yet.)</p>
 	
 	<div class="row center">
         <% @boxes.each do |box| %>
-		<div class="four columns">
+		<div class="three columns">
                         <% featured = box.random_print %>
                         <% unless featured.nil? %>
     			<img src="<%= featured.thing.image %>" alt="<%= featured.thing.image_alt_text %>" width="100%">
@@ -32,12 +41,6 @@
 		</div>
         <% end %>
 	</div>
-	
-	<a name="museums"></a>
-	<h2>Museums</h2>
-	<p>
-		<a href="">Horniman Museum and Gardens</a>, 
-		<a href="">The British Museum</a>
-	</p>
-	<h6>If you're interested to add objects from your museum into the mix, <a href="/contact">please say hi</a>.</h6>     
+
+	<h6>Do you have an idea for a box you'd like to see? <a href="/contact">Please say hi</a>!</h6>     
 	

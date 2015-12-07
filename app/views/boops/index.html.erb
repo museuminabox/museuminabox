@@ -2,6 +2,6 @@
 
 <ul>
 <% @boops.each do |boop| %>
-  <li>At <%= boop.created_at %> <%= link_to boop.print.thing.name, boop.print %> was booped on <%= link_to boop.box.museum.name, boop.box %></li>
+  <li><%= link_to boop.print.thing.name, boop.print %> was booped on <%= link_to boop.box.museum.name, boop.box %> <%= time_ago_in_words(boop.created_at) %> ago </li>
 <% end %>
 </ul>

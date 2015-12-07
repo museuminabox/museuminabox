@@ -2,6 +2,8 @@
 
 <% @prints.each do |print| %>
 
-<a href="<%= print_path(print) %>" alt="<%= print.thing.name %>"><img src="<%= print.image %>" width="300" /></a>
+<div style="width:33%;">
+	<a href="<%= print_path(print) %>" alt="<%= print.thing.name %>"><img src="<%= print.image %>" width="300" /></a>
+</div>
 
 <% end %>

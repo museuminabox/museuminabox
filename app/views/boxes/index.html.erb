@@ -1,5 +1,16 @@
 <h1>Boxes</h1>
 
-<% @boxes.each do |box| %>
-  <%= link_to box.museum.name, box %>
-<% end %>
+<div class="row">
+	<div class="three columns">
+		<h6>THE IDEA</h6>
+		<p>Gather your own collection, or one from a museum you like, and have it delivered to your door. Your very own brown paper package tied up with string!</p>
+		<p>Along with your new museum objects, the box contains a "<a href="/thebrain">brain</a>" which is a small computer that can tell you things about the objects it contains, and even give you updates about them later.</p>
+	</div>
+	<div class="eight columns offset-by-one">
+		<ol>
+			<% @boxes.each do |box| %>
+			  <li><%= link_to box.museum.name, box %></li>
+			<% end %>	
+		</ol>
+	</div>
+</div>
