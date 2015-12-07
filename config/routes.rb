@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :boops, only: [:index, :create]
 
   root 'pages#home'
-  
+ 
+  get '/boxes/:id/list' => 'boxes#list'
+ 
   get '/about' => 'pages#about'
   get '/sowhat' => 'pages#sowhat'
   get '/help' => 'pages#help'
