@@ -3,6 +3,6 @@
 
 <% @prints.each do |print| %>
 
-  <%= link_to print.thing.name, print %>
+<a href="<%= print_path(print) %>" alt="<%= print.thing.name %>"><img src="<%= print.image %>" width="300" /></a>
 
 <% end %>
