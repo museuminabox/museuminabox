@@ -13,7 +13,7 @@ class BoxesController < ApplicationController
     # Render it to a CSV
     results = CSV.generate(:force_quotes => true) do |csv|
       @prints.each do |p|
-        csv << [p.thing.name, print_url(p), p.id, p.brain_filename_audio, p.brain_filename_video]
+        csv << [p.thing.name, thing_url(p.thing), p.id, p.brain_filename_audio, p.brain_filename_video]
       end
     end
     render plain: results
