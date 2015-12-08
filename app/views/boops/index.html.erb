@@ -1,5 +1,5 @@
 <h1>Boops</h1>
-
+<meta http-equiv="refresh" content="30">
 <ul>
 <% @boops.each do |boop| %>
   <li><%= link_to boop.print.thing.name, boop.print %> was booped on <%= link_to boop.box.museum.name, boop.box %> <%= time_ago_in_words(boop.created_at) %> ago </li>
