@@ -9,7 +9,7 @@
 	<div class="eight columns offset-by-one">
 		<ol>
 			<% @boxes.each do |box| %>
-			  <li><%= link_to box.museum.name, box %></li>
+			  <li><%= link_to box.collection.name, box %></li>
 			<% end %>	
 		</ol>
 	</div>

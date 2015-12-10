@@ -1,6 +1,6 @@
 class Box < ActiveRecord::Base
 
-  belongs_to :museum
+  belongs_to :collection
 
   has_many :prints
   has_many :boops
