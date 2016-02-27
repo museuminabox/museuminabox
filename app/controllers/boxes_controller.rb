@@ -21,6 +21,13 @@ class BoxesController < ApplicationController
 
   def index
     @boxes = Box.limit(100).order(:id)
+    respond_to do |format|
+      format.html
+      format.json do
+        items = @boxes.collect { |b| { :id => b.id, :url => box_url(b), :name => b.collection.name } }
+        render text: items.to_json
+      end
+    end
   end
 
 end
