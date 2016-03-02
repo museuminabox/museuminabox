@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :institutions, only: [:show, :index]
   resources :objects, only: [:show, :index], controller: 'things'
   resources :prints, only: [:index, :show]
