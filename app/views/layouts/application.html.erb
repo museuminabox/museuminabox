@@ -20,11 +20,19 @@
 				  <li><%= current_link_to "Boxes", boxes_path, "boxes" %></li>
 		     	<li><%= current_link_to "So What?", "/sowhat" %></li>
 				  <li><%= current_link_to "Help", "/help" %></li>
+                                <% if user_signed_in? -%>
+                                  <li><%= current_link_to "Admin", "/admin" -%></li>
+                                <% end -%>
 				</ul>
 	    </div>      
 	  </div>
 		<!-- end nav -->    
 	    
+          <!-- Flash messages -->
+          <div class="notice"><%= notice %></div>
+          <div class="alert"><%= alert %></div>
+          <!-- end flash messages -->
+
 		<%= yield %>
 
 		<!-- start foot -->
