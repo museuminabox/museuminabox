@@ -32,6 +32,7 @@ ActiveAdmin.register Box do
       row :updated_at
     end
     panel "Contents" do
+      prints = box.prints
       table_for box.collection.things do |thing|
         column "Object ID" do |t|
           link_to t.id, admin_thing_path(t.id)
@@ -42,13 +43,13 @@ ActiveAdmin.register Box do
         column "Name", :name
         column :description
         print = box.prints.where(:thing_id == thing.id)[0]
-        unless print.nil?
-          column "Print ID" do
-            link_to print.id, admin_print_path(print.id)
-          end
-          column "Print Image" do
-            link_to image_tag(print.image, :width => 80), admin_print_path(print.id)
-          end
+        column "Print ID" do |t|
+          print = box.prints.where(thing_id: t.id)[0]
+          link_to print.id, admin_print_path(print.id) unless print.nil?
+        end
+        column "Print Image" do |t|
+          print = box.prints.where(thing_id: t.id)[0]
+          link_to image_tag(print.image, :width => 80), admin_print_path(print.id) unless print.nil?
         end
       end
     end
