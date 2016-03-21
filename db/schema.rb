@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302191918) do
+ActiveRecord::Schema.define(version: 20160308160054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,9 +60,10 @@ ActiveRecord::Schema.define(version: 20160302191918) do
   add_index "boops", ["print_id"], name: "index_boops_on_print_id", using: :btree
 
   create_table "boxes", force: :cascade do |t|
-    t.integer  "collection_id", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "collection_id",             null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "brain_type",    default: 0
   end
 
   create_table "collections", force: :cascade do |t|

@@ -12,7 +12,7 @@ ActiveAdmin.register Box do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-  permit_params :collection_id
+  permit_params :collection_id, :brain_type
 
   index do
     column :id
@@ -21,6 +21,7 @@ ActiveAdmin.register Box do
     column "Collection" do |box|
       link_to box.collection.name, admin_collection_path(box.collection_id)
     end
+    column :brain_type
     actions
   end
 
@@ -30,6 +31,7 @@ ActiveAdmin.register Box do
       row :collection_id
       row :created_at
       row :updated_at
+      row :brain_type
     end
     panel "Contents" do
       prints = box.prints
@@ -55,4 +57,11 @@ ActiveAdmin.register Box do
     end
   end
 
+  form do |f|
+    f.inputs do
+      f.input :collection
+      f.input :brain_type, as: :select, collection: Box.brain_types.keys
+    end
+    f.actions
+  end
 end

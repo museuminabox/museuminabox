@@ -1,5 +1,7 @@
 class Box < ActiveRecord::Base
 
+  enum brain_type: [ :audio, :video ]
+
   belongs_to :collection
 
   has_many :prints
