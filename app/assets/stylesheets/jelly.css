@@ -19,7 +19,15 @@ a:hover {
   padding-bottom: 2px;
   text-decoration: none;
 }
-  
+h4 {
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height:1.8em;
+}
+h5 {
+  text-transform: uppercase;
+  font-size: 14px;	
+}
 p, li {   
 	font-family: 'Futura', 'Verdana', sans-serif;
 }
