@@ -5,23 +5,45 @@ class BoxesController < ApplicationController
   def show
     @box = Box.find(params[:id])
     @prints = @box.prints.includes(:thing)
-    if admin_user_signed_in? || !@box.private
-      render
-    else
-      not_found
+    respond_to do |format|
+      format.html do
+        if admin_user_signed_in? || !@box.private
+          render
+        else
+          not_found
+        end
+      end
+      format.json do
+        render text: @box.to_json
+      end
     end
   end
 
   def list
     @box = Box.find(params[:id])
     @prints = @box.prints.includes(:thing)
-    # Render it to a CSV
-    results = CSV.generate(:force_quotes => true) do |csv|
-      @prints.each do |p|
-        csv << [p.thing.name, object_url(p.thing), p.id, p.brain_filename_audio, p.brain_filename_video]
+    respond_to do |format|
+      format.html do
+        if admin_user_signed_in? || !@box.private
+          render
+        else
+          not_found
+        end
+      end
+      format.json do
+        results = @prints.collect { |p| { :id => p.id, :name => p.thing.name, :url => object_url(p.thing), :image_url => URI.join(request.original_url, p.image).to_s, :brain_filename_audio => p.brain_filename_audio, :brain_filename_video => p.brain_filename_video } }
+        render text: results.to_json
+      end
+      format.csv do
+        # Render it to a CSV
+        results = CSV.generate(:force_quotes => true) do |csv|
+          @prints.each do |p|
+            csv << [p.thing.name, object_url(p.thing), p.id, p.brain_filename_audio, p.brain_filename_video]
+          end
+        end
+        render plain: results
       end
     end
-    render plain: results
   end
 
   def index
@@ -34,7 +56,7 @@ class BoxesController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        items = @boxes.collect { |b| { :id => b.id, :url => box_url(b), :name => b.collection.name } }
+        items = @boxes.collect { |b| { :id => b.id, :url => box_url(b), :name => b.collection.name, :brain_type => b.brain_type } }
         render text: items.to_json
       end
     end
