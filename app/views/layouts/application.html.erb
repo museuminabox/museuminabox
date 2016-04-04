@@ -18,8 +18,11 @@
 				  <li><%= current_link_to "Museums", institutions_path, "institutions" %></li>
 				  <li><%= current_link_to "Objects", objects_path, "things" %></li>
 				  <li><%= current_link_to "Boxes", boxes_path, "boxes" %></li>
-		     	<li><%= current_link_to "So What?", "/sowhat" %></li>
+		     	          <li><%= current_link_to "So What?", "/sowhat" %></li>
 				  <li><%= current_link_to "Help", "/help" %></li>
+                                <% if admin_user_signed_in? -%>
+                                  <li><%= current_link_to "Admin", "/admin" -%></li>
+                                <% end -%>
 				</ul>
 	    </div>      
 	  </div>

@@ -5,6 +5,11 @@ class BoxesController < ApplicationController
   def show
     @box = Box.find(params[:id])
     @prints = @box.prints.includes(:thing)
+    if admin_user_signed_in? || !@box.private
+      render
+    else
+      not_found
+    end
   end
 
   def list
@@ -20,7 +25,12 @@ class BoxesController < ApplicationController
   end
 
   def index
-    @boxes = Box.limit(100).order(:id)
+    if admin_user_signed_in?
+      @boxes = Box.limit(100).order(:id)
+    else
+      # Remove any private boxes
+      @boxes = Box.limit(100).where(:private => false).order(:id)
+    end
     respond_to do |format|
       format.html
       format.json do
