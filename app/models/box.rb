@@ -7,6 +7,10 @@ class Box < ActiveRecord::Base
   has_many :prints
   has_many :boops
 
+  def name
+    "Box ##{id} - #{collection.name}"
+  end
+
   def random_print
     unless prints.empty?
       prints[rand(prints.length)]
