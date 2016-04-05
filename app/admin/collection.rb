@@ -12,7 +12,7 @@ ActiveAdmin.register Collection do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-  permit_params :name
+  permit_params :name, :private
 
   show do
     attributes_table do
@@ -20,6 +20,7 @@ ActiveAdmin.register Collection do
       row :name
       row :created_at
       row :updated_at
+      row :private
     end
     panel "Things" do
       table_for collection.things do
