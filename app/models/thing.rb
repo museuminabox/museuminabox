@@ -1,4 +1,7 @@
 class Thing < ActiveRecord::Base
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :description_attribution_url, presence: true
 
   belongs_to :institution
 
