@@ -1,7 +1,11 @@
 class PagesController < ApplicationController
 
   def home
-    @boxes = Box.all
+    if admin_user_signed_in?
+      @boxes = Box.all
+    else
+      @boxes = Box.all.where(:private => false)
+    end
   end
 
   def about

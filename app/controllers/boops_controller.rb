@@ -18,7 +18,11 @@ class BoopsController < ApplicationController
   end
 
   def index
-    @boops = Boop.limit(100).order(created_at: :desc)
+    if admin_user_signed_in?
+      @boops = Boop.limit(100).order(created_at: :desc)
+    else
+      @boops = Boop.joins(:box).where("boxes.private" => false).limit(100).order(created_at: :desc)
+    end
   end
 
 protected
