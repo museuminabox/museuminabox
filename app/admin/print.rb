@@ -12,7 +12,7 @@ ActiveAdmin.register Print do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-  permit_params :thing_id, :box_id, :width_in_m, :height_in_m, :depth_in_m, :print_scale, :image, :image_alt_text, :brain_filename_video, :brain_filename_audio
+  permit_params :thing_id, :box_id, :width_in_m, :height_in_m, :depth_in_m, :print_scale, :image, :image_alt_text, :brain_filename_video, :brain_filename_audio, :brain_url_video, :brain_url_audio
 
 
 end
