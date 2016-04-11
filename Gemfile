@@ -11,9 +11,11 @@ gem 'activeadmin', '1.0.0.pre2'
 
 gem 'rails_12factor'
 
+gem 'aws-sdk', '~> 2'
 
 group :development do
   gem 'spring'
-	gem 'byebug'
+  gem 'byebug'
+  gem 'dotenv-rails'
 end
 
