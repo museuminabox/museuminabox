@@ -56,6 +56,7 @@ class BoxesController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
+        @boxes = Box.all.order(:id)
         items = @boxes.collect { |b| { :id => b.id, :url => box_url(b), :name => b.collection.name, :brain_type => b.brain_type } }
         render text: items.to_json
       end
