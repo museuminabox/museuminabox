@@ -31,14 +31,14 @@ class BoxesController < ApplicationController
         end
       end
       format.json do
-        results = @prints.collect { |p| { :id => p.id, :name => p.thing.name, :url => object_url(p.thing), :image_url => URI.join(request.original_url, p.image).to_s, :brain_filename_audio => p.brain_filename_audio, :brain_filename_video => p.brain_filename_video } }
+        results = @prints.collect { |p| { :id => p.id, :name => p.thing.name, :url => object_url(p.thing), :image_url => URI.join(request.original_url, p.image).to_s, :brain_filename_audio => p.brain_filename_audio, :brain_filename_video => p.brain_filename_video, :brain_url_audio => p.brain_url_audio, :brain_url_video => p.brain_url_video } }
         render text: results.to_json
       end
       format.csv do
         # Render it to a CSV
         results = CSV.generate(:force_quotes => true) do |csv|
           @prints.each do |p|
-            csv << [p.thing.name, object_url(p.thing), p.id, p.brain_filename_audio, p.brain_filename_video]
+            csv << [p.thing.name, object_url(p.thing), p.id, p.brain_filename_audio, p.brain_filename_video, p.brain_url_audio, p.brain_url_video]
           end
         end
         render plain: results

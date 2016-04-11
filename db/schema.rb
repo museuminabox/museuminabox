@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404151651) do
+ActiveRecord::Schema.define(version: 20160408164315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20160404151651) do
     t.text     "image_alt_text"
     t.text     "brain_filename_video"
     t.text     "brain_filename_audio"
+    t.string   "brain_url_video"
+    t.string   "brain_url_audio"
   end
 
   create_table "things", force: :cascade do |t|

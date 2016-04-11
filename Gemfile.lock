@@ -52,6 +52,12 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
+    aws-sdk (2.2.32)
+      aws-sdk-resources (= 2.2.32)
+    aws-sdk-core (2.2.32)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.2.32)
+      aws-sdk-core (= 2.2.32)
     bcrypt (3.1.10)
     bourbon (4.2.6)
       sass (~> 3.4)
@@ -72,6 +78,10 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (2.1.1)
+    dotenv-rails (2.1.1)
+      dotenv (= 2.1.1)
+      railties (>= 4.0, < 5.1)
     erubis (2.7.0)
     execjs (2.6.0)
     formtastic (3.1.3)
@@ -88,6 +98,8 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
+    jmespath (1.2.4)
+      json_pure (>= 1.8.1)
     jquery-rails (4.1.0)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -95,6 +107,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
+    json_pure (1.8.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -182,8 +195,10 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin (= 1.0.0.pre2)
+  aws-sdk (~> 2)
   byebug
   devise
+  dotenv-rails
   pg (~> 0.15)
   rails (= 4.2.5)
   rails_12factor
