@@ -12,4 +12,20 @@ class Print < ActiveRecord::Base
   has_many :boops
 
   delegate :institution, to: :thing
+
+  # Setting either of the media URLs should update the filename attribute
+
+  def brain_url_video=(new_url)
+    # Set it
+    write_attribute(:brain_url_video, new_url)
+    # And update the filename attribute
+    self.brain_filename_video = File.basename(URI::parse(new_url).path)
+  end
+
+  def brain_url_audio=(new_url)
+    # Set it
+    write_attribute(:brain_url_audio, new_url)
+    # And update the filename attribute
+    self.brain_filename_audio = File.basename(URI::parse(new_url).path)
+  end
 end
