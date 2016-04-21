@@ -1,0 +1,60 @@
+    text_node "\n</form><form class='directUpload#{brain_type}' id='upload_#{brain_type}' action='#{s3_direct_post.url}' enctype='multipart/form-data' method='post'>".html_safe
+      text_node "\n<fieldset class='inputs'><ol>".html_safe
+      s3_direct_post.fields.each do |k, v|
+        text_node "<input type='hidden' name='#{k}' value='#{v}' />".html_safe
+      end
+      text_node "<li class='string input optional stringish' id='upload_#{brain_type}'><label for='file_#{brain_type}' class='label'>Brain #{brain_type} file</label><input type='file' id='file_#{brain_type}' name='file_#{brain_type}' /></li>".html_safe
+      text_node "</ol></fieldset>".html_safe
+      text_node "<script type='text/javascript'>".html_safe
+      text_node "\n  $(function() {".html_safe
+      text_node "\n    $('.directUpload#{brain_type}').find(\"input:file\").each(function(i, elem) {".html_safe
+      text_node "\n      var fileInput    = $(elem); amc = fileInput;".html_safe
+      text_node "\n      var form         = $(fileInput.parents('form:first'));".html_safe
+      text_node "\n      var submitButton = form.find('input[type=\"submit\"]');".html_safe
+      text_node "\n      var progressBar  = $(\"<div class='bar'></div>\");".html_safe
+      text_node "\n      var barContainer = $(\"<div class='progress'></div>\").append(progressBar);".html_safe
+      text_node "\n      fileInput.after(barContainer);".html_safe
+      text_node "\n      fileInput.fileupload({".html_safe
+      text_node "\n        fileInput:       fileInput,".html_safe
+      text_node "\n        url:             '#{s3_direct_post.url}',".html_safe
+      text_node "\n        type:            'POST',".html_safe
+      text_node "\n        autoUpload:       true,".html_safe
+      text_node "\n        formData:         #{s3_direct_post.fields.to_json},".html_safe
+      text_node "\n        paramName:        'file', // S3 does not like nested name fields i.e. name=\"user[avatar_url]\"".html_safe
+      text_node "\n        dataType:         'XML',  // S3 returns XML if success_action_status is set to 201".html_safe
+      text_node "\n        replaceFileInput: false,".html_safe
+      text_node "\n        progressall: function (e, data) {".html_safe
+      text_node "\n          var progress = parseInt(data.loaded / data.total * 100, 10);".html_safe
+      text_node "\n          progressBar.css('width', progress + '%')".html_safe
+      text_node "\n        },".html_safe
+      text_node "\n        start: function (e) {".html_safe
+      text_node "\n          submitButton.prop('disabled', true);".html_safe
+      text_node "\n  ".html_safe
+      text_node "\n          progressBar.".html_safe
+      text_node "\n            css('background', 'green').".html_safe
+      text_node "\n            css('display', 'block').".html_safe
+      text_node "\n            css('width', '0%').".html_safe
+      text_node "\n            text(\"Loading...\");".html_safe
+      text_node "\n        },".html_safe
+      text_node "\n        done: function(e, data) {".html_safe
+      text_node "\n          submitButton.prop('disabled', false);".html_safe
+      text_node "\n          progressBar.text(\"Uploading done\");".html_safe
+      text_node "\n  ".html_safe
+      text_node "\n          // extract key and generate URL from response".html_safe
+      text_node "\n          var key   = $(data.jqXHR.responseXML).find(\"Key\").text();".html_safe
+      text_node "\n          var url   = '#{s3_direct_post.url}' + '/' + key;".html_safe
+      text_node "\n  ".html_safe
+      text_node "\n          // Store it in the print's details".html_safe
+      text_node "\n          $('#print_brain_url_#{brain_type}')[0].value = url;".html_safe
+      text_node "\n        },".html_safe
+      text_node "\n        fail: function(e, data) {".html_safe
+      text_node "\n          submitButton.prop('disabled', false);".html_safe
+      text_node "\n  ".html_safe
+      text_node "\n          progressBar.".html_safe
+      text_node "\n            css(\"background\", \"red\").".html_safe
+      text_node "\n            text(\"Failed\");".html_safe
+      text_node "\n        }".html_safe
+      text_node "\n      });".html_safe
+      text_node "\n    });".html_safe
+      text_node "\n  });".html_safe
+      text_node "\n</script>".html_safe
