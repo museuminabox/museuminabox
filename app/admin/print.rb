@@ -45,6 +45,8 @@ ActiveAdmin.register Print do
     # We're going to cheat slightly to add these two new forms after
     # the first one.  (because it's not clear how to cleanly get active_admin
     # to include them otherwise)
+    text_node "\n<h3>Upload Media to S3</h3>".html_safe
+    text_node "\n<p class='large'>Choosing a file for either of these input entries below will automatically upload it to Amazon S3.  Once the upload is complete, the relevant URL field in the print above will be populated with the uploaded file's URL.  You will still need to click 'Update Print' afterwards to save the URLs in the Print's details.</p>".html_safe
     @s3_direct_post_video = S3_BUCKET.presigned_post(key: "video/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
     render partial: "s3_upload", locals: { brain_type: 'video', s3_direct_post: @s3_direct_post_video}
     @s3_direct_post_audio = S3_BUCKET.presigned_post(key: "audio/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
