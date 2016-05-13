@@ -18,6 +18,9 @@ ActiveAdmin.register Thing do
     selectable_column
     column :id
     column :name
+    column "Collection" do |thing|
+      thing.collection.name unless thing.collection.nil?
+    end
     column :description
     actions
   end
