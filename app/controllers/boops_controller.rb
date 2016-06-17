@@ -22,6 +22,11 @@ class BoopsController < ApplicationController
       @boops = Boop.limit(100).order(created_at: :desc)
     else
       @boops = Boop.joins(:box).where("boxes.private" => false).limit(100).order(created_at: :desc)
+      # Discard any private objects too
+      public_boops = []
+      @boops.each do |b|
+        public_boops.push(b) unless b.box.private?
+      end
     end
   end
 
