@@ -25,8 +25,9 @@ class BoopsController < ApplicationController
       # Discard any private objects too
       public_boops = []
       @boops.each do |b|
-        public_boops.push(b) unless b.box.private?
+        public_boops.push(b) unless b.print.box.private?
       end
+      @boops = public_boops
     end
   end
 
